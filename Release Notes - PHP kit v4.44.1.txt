@@ -1,0 +1,208 @@
+Release Notes - PHP kit v4.44.1 (November 2015)
+
+Changes
+	* integration of v4.44.1 WSDL
+	* implementation of doBankTransfer
+
+********************************************************************************
+
+Release Notes - PHP kit v4.44 (September 2015)
+
+Changes
+	* integration of v4.44 WSDL
+
+Fixes
+	* AJAX example scripts
+
+********************************************************************************
+
+Release Notes - PHP kit v4.43.1 (August 2015)
+
+Changes
+	* integration of v4.43.1 WSDL
+	* more information in log files (main parameters of web services calls)
+
+********************************************************************************
+
+Release Notes - PHP kit v4.43 (July 2015)
+
+Changes
+	* integration of v4.43 WSDL
+	* integration of PaylineByMonext.wsdl => getMerchantSettingsToArray now returns default logo URL for each contract
+
+********************************************************************************
+
+Release Notes - PHP kit v4.42 (april 2015)
+
+Changes
+	* integration of v4.42 WSDL
+	* binding of new elements :
+		- legalStatus, legalDocument, birthDate, fingerprintID (Buyer object)
+		- county, phoneType (Address object)
+
+********************************************************************************
+
+Release Notes - PHP kit v4.41 (January 2014)
+
+Changes
+	* integration of v4.41 WSDL
+	* binding of new elements :
+		- authentication3DSecure (doImmediateWalletPaymentRequest)
+		- walletId & walletCardInd (verifyEnrollmentRequest)
+
+********************************************************************************
+
+Release Notes - PHP kit v4.40 (December 2014)
+
+Changes
+	* integration of v4.40 WSDL
+
+********************************************************************************
+
+Release Notes - PHP kit v4.39 (September 2014)
+
+Changes
+	* implementation of updatePaymentRecord, getBillingRecord, updateBillingRecord & getMerchantSettingsToArray
+	* binding of new elements :
+		- subcategory1, subcategory2, additionalData & taxRate (orderDetail)
+		- method (payment)
+		- endDate, newAmount & amountModificationDate (recurring)
+		- nbTry, rank (billingRecord)
+		- cardStatus (wallet)
+	* creation of configuration form and 'CONFIG.php file', removal of 'configuration' folder
+	* creation of 'transactions' page
+	* delete of unused elements :
+		- disableStatus (getWalletResponse & cards)
+
+********************************************************************************
+
+Release Notes - PHP kit v4.38 p1 (May 2014)
+
+Changes
+
+	* implementation of unBlock
+	* binding of new elements :
+		- deliveryExpectedDate & deliveryExpectedDelay (order)
+		- category & brand (orderDetail)
+		- title (buyer)
+		- title, firstName, lastName & state (address)
+	* renaming of util and Log classes to paylineUtil and paylineLog
+	* new optional parameter for paylineSDK constructor : $pathLog
+		- if filled with a valid path, logs are written under this path
+		- if filled with a blanck, no logs
+	* global parameter WS_VERSION in options.php
+		
+Fixes
+
+	* returns real array, instead of object, in case of error (code XXXXX)
+
+********************************************************************************
+
+Release Notes - PHP kit v1.4 (December 2013)
+
+Changes
+
+	* implementation of getAlertDetails
+	* implementation of getToken
+	* binding of new elements :
+		- CustomerTransHist
+		- PaymentMeansTransHist
+		- AlertsTransHist
+		- fraudResultDetails
+		- externalWalletType
+  * factorization of objects used in the sample pages
+  * New tab for API AJAX demo  
+	
+********************************************************************************
+Release Notes - PHP kit 1.3.1 (September 2013)
+
+Fixes
+
+    * Correction of "version" and "media" binding 
+                 
+********************************************************************************
+Release Notes - PHP kit 1.3 (July 2013)
+
+Changes
+
+    * Removal of primary/secondary mechanism
+    * Integrations of Payline v4.33 WSDL, including :
+     - manageWebWallet
+     - v4 of doWebPayment and getWebPaymentDetails
+    * Values defined in options.php are displayed in example forms
+
+********************************************************************************
+Release Notes - PHP kit 1.2.2 (August 2012)
+
+Changes
+
+    * Restauration of "configuration" folder, including identification.php, missing in 1.2.1 release
+
+********************************************************************************
+Release Notes - PHP kit 1.2.1 (June 2012)
+
+Changes
+
+    * send of paylineSDK::KIT_VERSION value in a dedicated HTTP header : version
+    * in examples/web/doWebPayment.php set selectedContractList and secondSelectedContractList with values defined in options.php 
+
+********************************************************************************
+Release Notes - PHP kit 1.2 stable (April 2012)
+
+Changes
+
+    * Full overhaull of class paylineSDK :
+ 		 - Renaming of all functions to match the targeted web service
+ 		 - Private Log class allowing to write proper trace log
+ 		 - Constants declared in option.php and identification.php are no more used in paylineSDK class
+ 		   Their values are to be passed through constructor of paylineSDK and its functions attributes
+ 		 - web services endpoints are defined in the paylineSDK class
+    * Merge of DirectPaymentAPI.wsdl, ExtendedAPI.wsdl and WebPaymentAPI.wsdl in a single Payline.wsdl file
+    * display kit version on all tabs 
+
+********************************************************************************
+Release Notes - PHP kit 1.1.11 stable (March 2012)
+
+Changes
+
+    * Implementation of WSDL changes :
+ 		 - new attribute transactionHistory in getTransactionDetailsRequest
+    * new Payline logo
+    * display kit version on the index page, under "Install" tab
+
+Fixes
+
+    * in WSDL files, remove blank from "type" element name in cardOut object            
+     
+********************************************************************************
+Release Notes - PHP kit 1.1.10 stable (November 2011)
+
+Changes
+
+    * Implementation of WSDL changes :
+ 		 - 2 new web services (DirectPaymentAPI) : getMerchantSettings and getBalance
+ 		 - new attribute secondSelectedContractList in doWebPaymentRequest
+ 		 - new attributes walletDisplayed, walletSecured and walletCardInd in buyer object
+    * new graphic
+
+********************************************************************************
+Release Notes - PHP kit 1.1.9 stable 
+
+Changes
+
+    * WSDL Files for productionHD and homologationHD environment
+    * Added High Disponibility switcher
+    * Implementation of a few new WS
+
+********************************************************************************
+Release Notes - PHP kit 1.1.8 stable (April 14, 2010)
+Changes
+
+    * WSDL Files for production and homologation environment
+    * Migrating version from PHP 5.2.10 to 5.3.2
+    * Deleted Mass API
+    * Added Release notes
+
+Fixes
+
+    * Fixed #2354: Error path WSDL file of API Extended
